@@ -1,0 +1,5 @@
+open http://localhost:3001/examples/pubsub/
+OLDDIR=$PWD
+cd pubsub
+vim
+cd $OLDDIR

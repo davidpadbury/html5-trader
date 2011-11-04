@@ -1,0 +1,5 @@
+open http://localhost:3001/examples/requirejs/controls/
+OLDDIR=$PWD
+cd requirejs/controls
+vim
+cd $OLDDIR

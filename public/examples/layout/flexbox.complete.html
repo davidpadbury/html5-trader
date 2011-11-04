@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Flexbox Layout</title>
+		<style>
+#container {
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	background-color: purple;
+	display: -webkit-box;
+	display: -ms-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	box-orient: horizontal;
+}
+
+#main-section {
+	-webkit-box-flex: 1;
+	-ms-box-flex: 1;
+	box-flex: 1;
+	display: -webkit-box;
+	display: -ms-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	-ms-box-orient: vertical;
+	box-orient: vertical;
+}
+
+#header {
+	background-color: blue;
+}
+
+#toolbar {
+	background-color: green;
+}
+
+#content {
+	background-color: red;
+	-webkit-box-flex: 1;
+	-ms-box-flex: 1;
+	box-flex: 1;
+}
+
+#sidebar {
+	background-color: yellow;
+	width: 300px;
+}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="main-section">
+			    <div id="header">Header</div>
+			    <div id="toolbar">Toolbar</div>
+			    <div id="content">Content</div>
+			</div>
+		    <div id="sidebar">Sidebar</div>
+		</div>
+	</body>	
+</html>

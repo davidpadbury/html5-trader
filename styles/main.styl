@@ -1,0 +1,480 @@
+
+display-box()
+	display -webkit-box
+	display -moz-box
+	display -ms-box
+	display box
+
+box-flex(flex)
+	-webkit-box-flex flex
+	-moz-box-flex flex
+	-ms-box-flex flex
+	box-flex flex
+	
+shell-background-color = #B0BFC8
+header-text-color = #C4CFD6
+
+background-size(width, height)
+	-webkit-background-size width height
+	-moz-background-size width height
+	background-size width height
+
+box-orient(orient)
+	-webkit-box-orient orient
+	-moz-box-orient orient
+	-ms-box-orient orient
+	box-orient orient
+
+box-align(align)
+	-webkit-box-align align
+	-moz-box-align align
+	-ms-box-align align
+	box-align align
+
+border-radius(radius)
+	-moz-border-radius radius
+	-webkit-border-radius radius
+	border-radius radius
+	behavior url(/Scripts/PIE/PIE.htc)
+
+border-top-left-radius(radius)
+	-moz-top-left-border-radius radius
+	-webkit-top-left-border-radius radius
+	border-top-left-radius radius
+
+border-bottom-left-radius(radius)
+	-moz-bottom-left-border-radius radius
+	-webkit-bottom-left-border-radius radius
+	border-bottom-left-radius radius
+
+border-bottom-right-radius(radius)
+	-moz-bottom-right-border-radius radius
+	-webkit-bottom-right-border-radius radius
+	border-bottom-right-radius radius
+
+border-top-right-radius(radius)
+	-moz-top-right-border-radius radius
+	-webkit-top-right-border-radius radius
+	border-top-right-radius radius
+
+background-gradient(from, to)
+	background-color to
+	background-image -webkit-gradient(linear, left top, left bottom, from(from), to(to)); /* Saf4+, Chrome */
+	background-image -webkit-linear-gradient(top, from, to); /* Chrome 10+, Saf5.1+ */
+	background-image    -moz-linear-gradient(top, from, to); /* FF3.6 */
+	background-image     -ms-linear-gradient(top, from, to); /* IE10 */
+	background-image      -o-linear-gradient(top, from, to); /* Opera 11.10+ */
+	background-image         linear-gradient(top, from, to)
+
+box-shadow-inset(offset-x, offset-y, color, blur-radius = 0, spread-radius = 0)
+	-moz-box-shadow inset offset-x offset-y blur-radius spread-radius color
+	-webkit-box-shadow inset offset-x offset-y blur-radius spread-radius color
+	box-shadow inset offset-x offset-y blur-radius spread-radius color
+
+box-shadow(offset-x, offset-y, color, blur-radius = 0, spread-radius = 0)
+	-moz-box-shadow offset-x offset-y blur-radius spread-radius color
+	-webkit-box-shadow offset-x offset-y blur-radius spread-radius color
+	box-shadow offset-x offset-y blur-radius spread-radius color
+	
+	
+vendorize(property, args)
+	-moz-{property} args
+	-ms-{property} args
+	-webkit-{property} args
+	-o-{property} args
+	{property} args
+
+transform-it(args)
+	vendorize('transform', args);
+
+transform-origin(origin)
+	vendorize('transform-origin', origin)
+
+pretty-list()
+	padding 5px
+	border solid 2px white
+	border-radius(12px)
+	box-shadow-inset(0, 1px, #284694, 3px)
+
+	li
+		display inline
+		margin 0 15px
+
+		a
+			text-transform uppercase
+			text-decoration none
+			color #8EB9D9
+			font-weight bold
+		
+
+		&.selected
+			a
+				color #fff
+				text-shadow 0 0 10px #fff
+
+@keyframes move-back
+	0% 
+		-webkit-transform translateZ(0) rotateY(0); 
+	20% 
+		-webkit-transform translateZ(-200px) rotateY(0); 
+	80% 
+		-webkit-transform translateZ(-200px) rotateY(180deg); 
+	100% 
+		-webkit-transform translateZ(-200px) rotateY(180deg); 
+
+@keyframes move-front
+	0% 
+		-webkit-transform translateZ(0) rotateY(-180deg); 
+	20% 
+		-webkit-transform translateZ(-200px) rotateY(-180deg); 
+	80% 
+		-webkit-transform translateZ(-200px) rotateY(0); 
+	100% 
+		-webkit-transform translateZ(0) rotateY(0); 
+
+@keyframes header-drop
+	0%
+		-webkit-transform translateY(-150px)
+	
+	100%
+		-webkit-transform translateY(0)
+
+@keyframes from-left
+	0%
+		-webkit-transform translateX(-800px)
+
+	100%
+		-webkit-transform translateX(0)
+
+html, body
+	width 100%
+	height 100%
+	
+body
+	background-color shell-background-color
+	font-family 'Segoe UI', Tahoma, Arial, Helvetica, Sans-Serif
+	font-size 14px
+
+
+.backgroundsize body
+	background-image url(/images/background.png)
+	background-repeat no-repeat
+	background-attachment fixed
+	background-size(100%, 100%)
+
+a
+	text-decoration none
+
+.shell
+	content-margin = 10px
+
+	position absolute
+	top 0; bottom 0
+	left 0; right 0
+	width 100%
+	height 100%
+
+	overflow hidden
+
+	.content
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		right 0
+		margin-left 10px
+		margin-right 320px
+		
+		html.ie6 &
+			right 330px
+		
+		h1
+			html.csstransforms &
+				-webkit-animation-name header-drop
+				-webkit-animation-duration 1.5s
+			
+
+		.control-bar
+			margin 0 0
+			height 45px
+
+			.screen-list
+				pretty-list()
+				background-color #2175B8
+				float left
+				text-align center
+			
+			input.add-symbol
+				float right
+				background-color transparent
+				border solid 1px #fff
+				padding 6px
+				border-radius(12px)
+				font-size 12px
+				color #fff
+			
+
+				&:-moz-placeholder
+					color #fff
+				&::-webkit-input-placeholder
+					color #fff
+			
+		
+
+		.screens
+			position absolute
+			top (64px+45px+25px)
+			bottom 10px
+			left 10px
+			right 0
+			
+			html.ie6 &
+				right 330px
+			
+			.screen
+				position absolute
+				top 0
+				bottom 0
+				left 0
+				right 0
+				
+				html.ie6 &
+					right 330px
+					position static
+					
+
+			html.no-csstransforms.no-csstransforms3d &
+				.screen
+					display: none;
+
+					&.front, &.initial
+						display: block;
+
+			html.csstransforms.no-csstransforms3d &
+				overflow: hidden;
+
+				.screen
+					-webkit-transition -webkit-transform 1s
+					-moz-transition -moz-transform 1s
+					-o-transition -o-transform 1s
+					-ms-transition -ms-transform 1s
+					transition transform 1s
+					transform-it( scale(0) )
+					transform-origin( 100% 100% )
+
+					&.front, &.initial
+						transform-origin( 0 0 )
+						transform-it( scale(1) )
+
+			html.csstransforms3d &
+				-webkit-perspective: 1000;
+
+				.screen
+					display: none
+					-webkit-transform-style: preserve-3d
+					-webkit-box-sizing: border-box
+					-webkit-backface-visibility: hidden
+
+					&.front, &.back, &.initial
+						display: block
+
+					&.front
+						-webkit-animation-name: move-front
+						-webkit-animation-duration: 1.5s
+						-webkit-transform: translateZ(0) rotateY(0)
+
+					&.back
+						-webkit-animation-name: move-back
+						-webkit-animation-duration: 1.5s
+						-webkit-transform: translateZ(-200px) rotateY(180deg)
+
+	.sidebar
+		sidebar-width = 300px
+		header-height = 32px
+		margin content-margin
+		width sidebar-width
+
+		position absolute
+		right 0
+		top 0
+		bottom 0
+		
+		.header
+			height header-height
+			
+			.icons
+				pretty-list()
+				background-color #607789
+				text-align center
+
+				li
+					margin 0 5px
+					a
+						display inline-block
+						text-indent -9999px
+						width 17px
+						height 17px
+
+				li.chart
+					background transparent url(/images/graph.png) no-repeat center center
+			
+				li.pie
+					background transparent url(/images/pie.png) no-repeat center center
+
+
+		.details
+			position absolute
+			top header-height
+			bottom 0
+			left 0
+			right 0
+			margin-top 10px
+			padding 0
+			
+			font-size 11px
+			
+			overflow-y auto
+			overflow-x hidden
+
+			.detail-widget
+				padding 10px
+				border-bottom solid 1px white
+				h1
+					color #1B75BB
+					font-size 11px
+					margin-bottom 15px
+				
+				&:last-child
+					border-bottom none
+
+				.chart
+					width sidebar-width - 35px
+					height 150px
+
+	table
+		width 100%
+		border-collapse separate
+		border-spacing 0 2px
+
+		th:first-child, td:first-child
+			border-top-left-radius(5px)
+			border-bottom-left-radius(5px)
+		
+
+		th:last-child, td:last-child
+			border-top-right-radius(5px)
+			border-bottom-right-radius(5px)
+		
+
+		tr
+			th, td
+				padding 8px
+				text-align center
+
+
+		thead
+			tr
+				color white
+
+				th
+					background-gradient(#757575, #000)
+
+		tbody
+			tr:nth-child(odd)
+				td
+					background-color rgba(255, 255, 255, 0.7)
+
+			tr.selected
+				td
+					background-color rgba(153, 180, 198, 0.7)
+		
+			tr:hover
+				td
+					background-color rgba(197, 215, 229, 0.7)
+
+h1
+	font-size 64px
+	font-weight normal
+	color header-text-color
+	text-transform uppercase
+	margin-bottom 35px
+	
+	.company
+		font-weight bold
+		margin-right 25px
+
+.news-articles
+	text-color = #808080
+
+	color text-color
+
+	a
+		color text-color
+
+	ul
+		li
+			margin-bottom 10px
+
+.screen
+	background-color #D6DDE2
+	padding 15px 8px
+	border-radius(15px)
+	box-shadow(1px, 1px, #888, 15px)
+
+.rgba .screen
+	background-color rgba(255, 255, 255, 0.6)
+
+/* iPad [portrait + landscape] */
+@media only screen and (max-width: 950px)
+	.shell .content 
+		h1
+			font-size 42px
+			margin-bottom 10px
+			
+		.screens
+			top 90px
+			
+	table.positions
+		.market-value, .gain-loss
+			display none
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-width: 480px)
+	.shell
+		position static
+		
+		.content
+			position static
+			margin 0
+
+			h1
+				font-size 30px
+				
+			.control-bar
+				height auto
+				
+				.screen-list
+					float none
+			
+				input.add-symbol
+					float none
+					
+			.screens
+				clear both
+				position static
+				height 250px
+				overflow scroll
+			
+		.sidebar
+			position static
+			width auto
+			
+			.details
+				position static
+				
+				.detail-widget .chart
+					width auto
+			
+	table.positions
+		.shares, .cost-basis
+			display none

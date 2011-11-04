@@ -1,0 +1,28 @@
+{
+	"CSCO": {
+		"name": "Cisco",
+		"shares": 10,
+		"news": [
+			{
+				"title":"Netflix-Qwikster move draws skeptical reaction",
+				"date": "2011-09-19"
+			}
+		]
+	},
+	"MSFT": {
+		"name": "Microsoft",
+		"shares": 100
+	},
+	"AAPL": {
+		"name": "Apple",
+		"shares": 100
+	},
+	"GOOG": {
+		"name": "Google",
+		"shares": 50
+	},
+	"ORCL": {
+		"name": "Oracle",
+		"shares": 25
+	}
+}

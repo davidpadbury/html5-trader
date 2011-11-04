@@ -1,0 +1,567 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #b0bfc8;
+  font-family: "Segoe UI", Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 14px;
+}
+.backgroundsize body {
+  background-image: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+a {
+  text-decoration: none;
+}
+.shell {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.shell .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 10px;
+  margin-right: 320px;
+}
+html.ie6 .shell .content {
+  right: 330px;
+}
+html.csstransforms .shell .content h1 {
+  -webkit-animation-name: header-drop;
+  -webkit-animation-duration: 1.5s;
+}
+.shell .content .control-bar {
+  margin: 0 0;
+  height: 45px;
+}
+.shell .content .control-bar .screen-list {
+  padding: 5px;
+  border: solid 2px #fff;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  behavior: url("/Scripts/PIE/PIE.htc");
+  -moz-box-shadow: inset 0 1px 3px 0 #284694;
+  -webkit-box-shadow: inset 0 1px 3px 0 #284694;
+  -moz-box-shadow: inset 0 3px 0 1px;
+  -webkit-box-shadow: inset 0 3px 0 1px;
+  box-shadow: inset 0 3px 0 1px;
+  background-color: #2175b8;
+  float: left;
+  text-align: center;
+}
+.shell .content .control-bar .screen-list li {
+  display: inline;
+  margin: 0 15px;
+}
+.shell .content .control-bar .screen-list li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8eb9d9;
+  font-weight: bold;
+}
+.shell .content .control-bar .screen-list li.selected a {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+.shell .content .control-bar input.add-symbol {
+  float: right;
+  background-color: transparent;
+  border: solid 1px #fff;
+  padding: 6px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  behavior: url("/Scripts/PIE/PIE.htc");
+  font-size: 12px;
+  color: #fff;
+}
+.shell .content .control-bar input.add-symbol:-moz-placeholder {
+  color: #fff;
+}
+.shell .content .control-bar input.add-symbol::-webkit-input-placeholder {
+  color: #fff;
+}
+.shell .content .screens {
+  position: absolute;
+  top: 134px;
+  bottom: 10px;
+  left: 10px;
+  right: 0;
+}
+html.ie6 .shell .content .screens {
+  right: 330px;
+}
+.shell .content .screens .screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+html.ie6 .shell .content .screens .screen {
+  right: 330px;
+  position: static;
+}
+html.no-csstransforms.no-csstransforms3d .shell .content .screens .screen {
+  display: none;
+}
+html.no-csstransforms.no-csstransforms3d .shell .content .screens .screen.front,
+html.no-csstransforms.no-csstransforms3d .shell .content .screens .screen.initial {
+  display: block;
+}
+html.csstransforms.no-csstransforms3d .shell .content .screens {
+  overflow: hidden;
+}
+html.csstransforms.no-csstransforms3d .shell .content .screens .screen {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  transition: transform 1s;
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+html.csstransforms.no-csstransforms3d .shell .content .screens .screen.front,
+html.csstransforms.no-csstransforms3d .shell .content .screens .screen.initial {
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+html.csstransforms3d .shell .content .screens {
+  -webkit-perspective: 1000;
+}
+html.csstransforms3d .shell .content .screens .screen {
+  display: none;
+  -webkit-transform-style: preserve-3d;
+  -webkit-box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+}
+html.csstransforms3d .shell .content .screens .screen.front,
+html.csstransforms3d .shell .content .screens .screen.back,
+html.csstransforms3d .shell .content .screens .screen.initial {
+  display: block;
+}
+html.csstransforms3d .shell .content .screens .screen.front {
+  -webkit-animation-name: move-front;
+  -webkit-animation-duration: 1.5s;
+  -webkit-transform: translateZ(0) rotateY(0);
+}
+html.csstransforms3d .shell .content .screens .screen.back {
+  -webkit-animation-name: move-back;
+  -webkit-animation-duration: 1.5s;
+  -webkit-transform: translateZ(-200px) rotateY(180deg);
+}
+.shell .sidebar {
+  margin: 10px;
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.shell .sidebar .header {
+  height: 32px;
+}
+.shell .sidebar .header .icons {
+  padding: 5px;
+  border: solid 2px #fff;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  behavior: url("/Scripts/PIE/PIE.htc");
+  -moz-box-shadow: inset 0 1px 3px 0 #284694;
+  -webkit-box-shadow: inset 0 1px 3px 0 #284694;
+  -moz-box-shadow: inset 0 3px 0 1px;
+  -webkit-box-shadow: inset 0 3px 0 1px;
+  box-shadow: inset 0 3px 0 1px;
+  background-color: #607789;
+  text-align: center;
+}
+.shell .sidebar .header .icons li {
+  display: inline;
+  margin: 0 15px;
+}
+.shell .sidebar .header .icons li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8eb9d9;
+  font-weight: bold;
+}
+.shell .sidebar .header .icons li.selected a {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+.shell .sidebar .header .icons li {
+  margin: 0 5px;
+}
+.shell .sidebar .header .icons li a {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 17px;
+  height: 17px;
+}
+.shell .sidebar .header .icons li.chart {
+  background: transparent url("/images/graph.png") no-repeat center center;
+}
+.shell .sidebar .header .icons li.pie {
+  background: transparent url("/images/pie.png") no-repeat center center;
+}
+.shell .sidebar .details {
+  position: absolute;
+  top: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  padding: 0;
+  font-size: 11px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.shell .sidebar .details .detail-widget {
+  padding: 10px;
+  border-bottom: solid 1px #fff;
+}
+.shell .sidebar .details .detail-widget h1 {
+  color: #1b75bb;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+.shell .sidebar .details .detail-widget:last-child {
+  border-bottom: none;
+}
+.shell .sidebar .details .detail-widget .chart {
+  width: 265px;
+  height: 150px;
+}
+.shell table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+}
+.shell table th:first-child,
+.shell table td:first-child {
+  -moz-top-left-border-radius: 5px;
+  -webkit-top-left-border-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-bottom-left-border-radius: 5px;
+  -webkit-bottom-left-border-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.shell table th:last-child,
+.shell table td:last-child {
+  -moz-top-right-border-radius: 5px;
+  -webkit-top-right-border-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-bottom-right-border-radius: 5px;
+  -webkit-bottom-right-border-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.shell table tr th,
+.shell table tr td {
+  padding: 8px;
+  text-align: center;
+}
+.shell table thead tr {
+  color: #fff;
+}
+.shell table thead tr th {
+  background-color: #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#757575), to(#000));
+/* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #757575, #000);
+/* Chrome 10+, Saf5.1+ */
+  background-image: -moz-linear-gradient(top, #757575, #000);
+/* FF3.6 */
+  background-image: -ms-linear-gradient(top, #757575, #000);
+/* IE10 */
+  background-image: -o-linear-gradient(top, #757575, #000);
+/* Opera 11.10+ */
+  background-image: linear-gradient(top, #757575, #000);
+}
+.shell table tbody tr:nth-child(odd) td {
+  background-color: rgba(255,255,255,0.70);
+}
+.shell table tbody tr.selected td {
+  background-color: rgba(153,180,198,0.70);
+}
+.shell table tbody tr:hover td {
+  background-color: rgba(197,215,229,0.70);
+}
+h1 {
+  font-size: 64px;
+  font-weight: normal;
+  color: #c4cfd6;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+h1 .company {
+  font-weight: bold;
+  margin-right: 25px;
+}
+.news-articles {
+  color: #808080;
+}
+.news-articles a {
+  color: #808080;
+}
+.news-articles ul li {
+  margin-bottom: 10px;
+}
+.screen {
+  background-color: #d6dde2;
+  padding: 15px 8px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  behavior: url("/Scripts/PIE/PIE.htc");
+  -moz-box-shadow: 1px 1px 15px 0 #888;
+  -webkit-box-shadow: 1px 1px 15px 0 #888;
+  box-shadow: 1px 1px 15px 0 #888;
+}
+.rgba .screen {
+  background-color: rgba(255,255,255,0.60);
+}
+/* iPad [portrait + landscape] */
+@media only screen and (max-width: 950px) {
+  .shell .content h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  .shell .content .screens {
+    top: 90px;
+  }
+  table.positions .market-value,
+  table.positions .gain-loss {
+    display: none;
+  }
+}
+/* iPhone [portrait + landscape] */
+@media only screen and (max-width: 480px) {
+  .shell {
+    position: static;
+  }
+  .shell .content {
+    position: static;
+    margin: 0;
+  }
+  .shell .content h1 {
+    font-size: 30px;
+  }
+  .shell .content .control-bar {
+    height: auto;
+  }
+  .shell .content .control-bar .screen-list {
+    float: none;
+  }
+  .shell .content .control-bar input.add-symbol {
+    float: none;
+  }
+  .shell .content .screens {
+    clear: both;
+    position: static;
+    height: 250px;
+    overflow: scroll;
+  }
+  .shell .sidebar {
+    position: static;
+    width: auto;
+  }
+  .shell .sidebar .details {
+    position: static;
+  }
+  .shell .sidebar .details .detail-widget .chart {
+    width: auto;
+  }
+  table.positions .shares,
+  table.positions .cost-basis {
+    display: none;
+  }
+}
+@-moz-keyframes move-back {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+}
+@-webkit-keyframes move-back {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+}
+@keyframes move-back {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: translateZ(-200px) rotateY(180deg);
+  }
+}
+@-moz-keyframes move-front {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(-180deg);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(-180deg);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+}
+@-webkit-keyframes move-front {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(-180deg);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(-180deg);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+}
+@keyframes move-front {
+  0% {
+    -webkit-transform: translateZ(0) rotateY(-180deg);
+  }
+
+  20% {
+    -webkit-transform: translateZ(-200px) rotateY(-180deg);
+  }
+
+  80% {
+    -webkit-transform: translateZ(-200px) rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+  }
+}
+@-moz-keyframes header-drop {
+  0% {
+    -webkit-transform: translateY(-150px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-webkit-keyframes header-drop {
+  0% {
+    -webkit-transform: translateY(-150px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes header-drop {
+  0% {
+    -webkit-transform: translateY(-150px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes from-left {
+  0% {
+    -webkit-transform: translateX(-800px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-webkit-keyframes from-left {
+  0% {
+    -webkit-transform: translateX(-800px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes from-left {
+  0% {
+    -webkit-transform: translateX(-800px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
