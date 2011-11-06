@@ -1,2 +1,0 @@
-open http://localhost:4000/modernizr/background/background.html
-vim modernizr/background/background.scss

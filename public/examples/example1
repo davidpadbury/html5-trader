@@ -1,5 +1,0 @@
-open http://localhost:4000/requirejs/basic/
-OLDDIR=$PWD
-cd requirejs/basic
-vim
-cd $OLDDIR

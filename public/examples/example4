@@ -1,5 +1,0 @@
-open http://localhost:3001/examples/testing/runner.html
-OLDDIR=$PWD
-cd testing
-vim specs/StockTrader/watch/AddWatch/addWatchView.spec.js
-cd $OLDDIR
