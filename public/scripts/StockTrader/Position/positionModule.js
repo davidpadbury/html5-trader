@@ -1,4 +1,4 @@
-define(['./Summary/summaryView', './PieChart/pieChartView'], function (SummaryView, PieChartView) {
+define(['./summary/summaryView', './pieChart/pieChartView'], function (SummaryView, PieChartView) {
 
     return {
         views: {

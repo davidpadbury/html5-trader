@@ -1,5 +1,5 @@
 define(
-	['./Position/positionModule', './Watch/watchModule', './market/marketModule', './news/newsModule'], 
+	['./position/positionModule', './watch/watchModule', './market/marketModule', './news/newsModule'], 
 	function (positionModule, watchModule, marketModule, newsModule) {
 
     return {

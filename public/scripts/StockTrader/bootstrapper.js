@@ -1,5 +1,5 @@
 require(
-	['modules', 'Shell/shell', 'Infrastructure/pubsub', 'Infrastructure/stockDataService'], 
+	['modules', 'shell/shell', 'infrastructure/pubsub', 'infrastructure/stockDataService'], 
 	function (modules, Shell, PubSub, StockDataService) {
 	
 		var container = $('#container'),
