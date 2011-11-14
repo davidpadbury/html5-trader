@@ -1,0 +1,11 @@
+{
+	"undef": true,
+	"browser": true,
+	"jquery": true,
+	"predef": [
+		"define",
+		"require",
+		"Backbone",
+		"io"
+	]
+}

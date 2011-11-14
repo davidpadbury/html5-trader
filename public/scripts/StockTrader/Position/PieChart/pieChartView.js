@@ -37,7 +37,7 @@ define(function() {
 					legend: {
 						show: false
 					}
-				})
+				});
 			});
         },
 
