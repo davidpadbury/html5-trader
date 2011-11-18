@@ -1,7 +1,6 @@
 define(['text!./addWatchView.html'], function(tmpl) {
-	
 	var symbolRegex = /^\w+$/;
-	
+
 	var AddWatchView = Backbone.View.extend({
 		events: {
 			'submit form': 'addWatchSubmitted'
