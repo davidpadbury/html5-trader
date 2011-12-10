@@ -3,7 +3,7 @@
     "description": "Example app and talk on building Enterprise HTML5 applications",
     "author": "David Padbury <david@davidpadbury.com>",
     "dependencies": {
-        "express": "2.4.x",
+        "express": "2.5.x",
         "stylus": "0.15.x",
         "socket.io": "0.8.x",
         "request": "2.1.x",
